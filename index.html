@@ -108,10 +108,11 @@ section{padding:64px 0;scroll-margin-top:90px}
 .tip{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;border:1px solid var(--border);
   background:var(--card);box-shadow:var(--shadow);margin-bottom:1.4rem;position:relative}
 .tip::before{content:"";position:absolute;top:10%;bottom:10%;left:50%;width:1px;background:var(--border);transform:translateX(-50%)}
-.tip > div{padding:.9rem 1.2rem;display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.92rem}
+.tip > div{padding:.9rem 1.2rem;display:flex;align-items:center;gap:.55rem;font-weight:600;font-size:.92rem}
 .tip .tip-tr{color:var(--text)} .tip .tip-tr .ic{color:var(--tr)}
-.tip .tip-ar{font-family:var(--arabic);justify-content:flex-end;text-align:right;color:var(--text)} .tip .tip-ar .ic{color:var(--ar)}
-.tip .ic{font-size:1.2rem}
+.tip .tip-ar{font-family:var(--arabic);direction:rtl;text-align:right;color:var(--text)} .tip .tip-ar .ic{color:var(--ar)}
+.tip .ic{font-size:1.2rem;flex-shrink:0}
+.tip .t{line-height:1.45}
 
 /* ============ بطاقة المفهوم ثنائية اللغة (محاذاة دقيقة) ============ */
 .concept{position:relative;display:grid;grid-template-columns:1fr 1fr;column-gap:2.6rem;row-gap:.35rem;
@@ -352,8 +353,8 @@ footer .ar{font-family:var(--arabic)}
     <div class="section-rule reveal"></div>
 
     <div class="tip reveal">
-      <div class="tip-tr"><span class="ic">🔑</span> Her savaşta <b>anahtar kelimelere</b> odaklan — sınavın cevabı onlarda gizli!</div>
-      <div class="tip-ar"><span class="ic">🔑</span> ركّز على <b>الكلمات المفتاحية</b> في كل معركة لأنها مفتاح الحل في الامتحان</div>
+      <div class="tip-tr"><span class="ic">🔑</span><span class="t">Her savaşta <b>anahtar kelimelere</b> odaklan — sınavın cevabı onlarda gizli!</span></div>
+      <div class="tip-ar"><span class="ic">🔑</span><span class="t">ركّز على <b>الكلمات المفتاحية</b> في كل معركة لأنها مفتاح الحل في الامتحان.</span></div>
     </div>
 
     <!-- خط زمني بصري -->
@@ -425,8 +426,8 @@ footer .ar{font-family:var(--arabic)}
     <div class="section-rule reveal"></div>
 
     <div class="tip reveal">
-      <div class="tip-tr"><span class="ic">📝</span> Sınavda uygulamanın <b>görevi verilir</b>, sen <b>adını</b> bulacaksın.</div>
-      <div class="tip-ar"><span class="ic">📝</span> في الامتحان تُعطى <b>وظيفة التطبيق</b> ويُطلب منك معرفة <b>اسمه</b>.</div>
+      <div class="tip-tr"><span class="ic">📝</span><span class="t">Sınavda uygulamanın <b>görevi verilir</b>, sen <b>adını</b> bulacaksın.</span></div>
+      <div class="tip-ar"><span class="ic">📝</span><span class="t">في الامتحان تُعطى <b>وظيفة التطبيق</b> ويُطلب منك معرفة <b>اسمه</b>.</span></div>
     </div>
 
     <div class="apps reveal">
@@ -478,8 +479,8 @@ footer .ar{font-family:var(--arabic)}
     <div class="section-rule reveal"></div>
 
     <div class="tip reveal">
-      <div class="tip-tr"><span class="ic">🚀</span> Bir projenin başarısı için <b>çok önemli</b> kavramlar.</div>
-      <div class="tip-ar"><span class="ic">🚀</span> مصطلحات <b>هامة جداً</b> لنجاح أي مشروع.</div>
+      <div class="tip-tr"><span class="ic">🚀</span><span class="t">Bir projenin başarısı için <b>çok önemli</b> kavramlar.</span></div>
+      <div class="tip-ar"><span class="ic">🚀</span><span class="t">مصطلحات <b>هامة جداً</b> لنجاح أي مشروع.</span></div>
     </div>
 
     <div class="concept reveal">
@@ -545,8 +546,8 @@ footer .ar{font-family:var(--arabic)}
     <div class="section-rule reveal"></div>
 
     <div class="tip reveal">
-      <div class="tip-tr"><span class="ic">❗</span> Kesin soru: <b>Aralarındaki fark nedir?</b></div>
-      <div class="tip-ar"><span class="ic">❗</span> السؤال المؤكد: <b>ما الفرق بينهما؟</b></div>
+      <div class="tip-tr"><span class="ic">❗</span><span class="t">Kesin soru: <b>Aralarındaki fark nedir?</b></span></div>
+      <div class="tip-ar"><span class="ic">❗</span><span class="t">السؤال المؤكد: <b>ما الفرق بينهما؟</b></span></div>
     </div>
 
     <div class="versus reveal">
@@ -628,8 +629,8 @@ footer .ar{font-family:var(--arabic)}
     <div class="section-rule reveal"></div>
 
     <div class="tip reveal">
-      <div class="tip-tr"><span class="ic">🔍</span> Cümleden <b>hakkı çıkar</b> — "Berat" senaryosu.</div>
-      <div class="tip-ar"><span class="ic">🔍</span> كيف نستخرج <b>الحق</b> من الجملة — سيناريو الطالب «بيرات».</div>
+      <div class="tip-tr"><span class="ic">🔍</span><span class="t">Cümleden <b>hakkı çıkar</b> — "Berat" senaryosu.</span></div>
+      <div class="tip-ar"><span class="ic">🔍</span><span class="t">كيف نستخرج <b>الحق</b> من الجملة — سيناريو الطالب «بيرات».</span></div>
     </div>
 
     <div class="scenario reveal">
