@@ -1,0 +1,7 @@
+# أدوات المحرّر والمعاينة المحلية
+.claude/
+
+# ملفات النظام
+Thumbs.db
+Desktop.ini
+.DS_Store
