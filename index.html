@@ -50,6 +50,8 @@ body{
 .ar{font-family:var(--arabic)}
 mark{background:linear-gradient(180deg,transparent 55%,rgba(250,204,21,.65) 55%);color:inherit;padding:0 .15em;border-radius:3px;font-weight:700}
 body.dark mark{background:linear-gradient(180deg,transparent 55%,rgba(250,204,21,.35) 55%)}
+/* تركيز واضح للوحة المفاتيح (a11y) */
+a:focus-visible,button:focus-visible{outline:3px solid var(--c2);outline-offset:3px;border-radius:8px}
 
 /* ============ شريط التقدم العلوي ============ */
 #progress{position:fixed;top:0;left:0;height:4px;width:0;z-index:200;
@@ -66,7 +68,8 @@ header.nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);
   background:linear-gradient(135deg,var(--tr),var(--ar));box-shadow:var(--shadow)}
 .brand small{display:block;font-weight:600;font-size:.7rem;color:var(--muted)}
 nav.tabs{display:flex;gap:.25rem;flex-wrap:wrap;margin-inline-start:auto;align-items:center}
-nav.tabs a{font-size:.82rem;font-weight:600;color:var(--muted);text-decoration:none;padding:.4rem .7rem;border-radius:10px;transition:.2s;white-space:nowrap}
+nav.tabs a{font-size:.82rem;font-weight:600;color:#475569;text-decoration:none;padding:.4rem .7rem;border-radius:10px;transition:.2s;white-space:nowrap}
+body.dark nav.tabs a{color:#a9b8d1}
 nav.tabs a:hover{color:var(--text);background:var(--card-soft)}
 nav.tabs a.active{color:#fff;background:var(--accent);box-shadow:var(--shadow)}
 .toggle{border:1px solid var(--border);background:var(--card);color:var(--text);width:40px;height:40px;border-radius:11px;cursor:pointer;font-size:1.1rem;transition:.2s}
@@ -149,7 +152,7 @@ section{padding:64px 0;scroll-margin-top:90px}
 .tl-card:nth-child(2) .stage{background:#f97316}
 .tl-card:nth-child(3) .stage{background:#16a34a}
 .tl-emoji{font-size:2.4rem;line-height:1;margin:.4rem 0 .3rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.15))}
-.tl-card h4{font-size:1.05rem;font-weight:800}
+.tl-card h3{font-size:1.05rem;font-weight:800}
 .tl-card .yr{font-size:.8rem;color:var(--muted);font-weight:700;margin-bottom:.5rem}
 .tl-state{font-weight:800;font-size:.86rem;padding:.3rem .6rem;border-radius:999px;display:inline-block;margin:.2rem 0}
 .tl-card:nth-child(1) .tl-state{background:#fef3c7;color:#b45309}
@@ -165,7 +168,7 @@ body.dark .tl-card:nth-child(3) .tl-state{background:#0c2e16;color:#86efac}
 .app{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.2rem;box-shadow:var(--shadow);transition:.25s;border-top:5px solid var(--c2)}
 .app:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
 .app .ico{font-size:1.7rem;width:50px;height:50px;border-radius:13px;display:grid;place-items:center;background:var(--c2);color:#fff;margin-bottom:.6rem}
-.app h4{font-size:1.15rem;font-weight:800}
+.app h3{font-size:1.15rem;font-weight:800}
 .app .fn-tr{font-size:.9rem;color:var(--muted);margin:.4rem 0}
 .app .fn-ar{font-family:var(--arabic);direction:rtl;text-align:right;font-size:.95rem;color:var(--text);border-top:1px dashed var(--border);padding-top:.5rem;margin-top:.5rem}
 
@@ -179,8 +182,8 @@ body.dark .tl-card:nth-child(3) .tl-state{background:#0c2e16;color:#86efac}
 
 /* لعبة المطابقة */
 .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.match-col h5{font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:.6rem;font-weight:800}
-.match-col.res h5{color:var(--tr)} .match-col.act h5{color:var(--ar);font-family:var(--arabic);text-align:right}
+.match-col h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:.6rem;font-weight:800}
+.match-col.res h4{color:var(--tr)} .match-col.act h4{color:var(--ar);font-family:var(--arabic);text-align:right}
 .chip{display:flex;align-items:center;gap:.6rem;width:100%;text-align:left;font-family:inherit;font-size:.98rem;font-weight:600;
   background:var(--card);border:2px solid var(--border);border-radius:14px;padding:.85rem 1rem;margin-bottom:.7rem;cursor:pointer;transition:.18s}
 .chip:hover{border-color:var(--accent);transform:translateX(3px)}
@@ -198,7 +201,7 @@ body.dark .tl-card:nth-child(3) .tl-state{background:#0c2e16;color:#86efac}
 .sort-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.9rem}
 .sort-item{background:var(--card);border:2px solid var(--border);border-radius:16px;padding:1rem;text-align:center;transition:.2s}
 .sort-item .si-emoji{font-size:2rem}
-.sort-item h5{font-weight:800;margin:.3rem 0}
+.sort-item h4{font-weight:800;margin:.3rem 0}
 .sort-item .si-ar{font-family:var(--arabic);color:var(--muted);font-size:.88rem;direction:rtl;margin-bottom:.7rem}
 .sort-btns{display:flex;gap:.5rem;justify-content:center}
 .sort-btns button{flex:1;font-family:inherit;font-weight:700;font-size:.82rem;border:1.5px solid var(--border);background:var(--card-soft);
@@ -215,8 +218,8 @@ body.dark .tl-card:nth-child(3) .tl-state{background:#0c2e16;color:#86efac}
 .vs-card{border-radius:18px;padding:1.3rem;box-shadow:var(--shadow);border:1px solid var(--border)}
 .vs-card.pat{background:linear-gradient(160deg,color-mix(in srgb,var(--c4) 12%,var(--card)),var(--card));border-top:5px solid var(--c4)}
 .vs-card.tel{background:linear-gradient(160deg,color-mix(in srgb,var(--ar) 12%,var(--card)),var(--card));border-top:5px solid var(--ar)}
-.vs-card h4{font-size:1.25rem;font-weight:800;display:flex;align-items:center;gap:.5rem}
-.vs-card.pat h4{color:var(--c4)} .vs-card.tel h4{color:var(--ar)}
+.vs-card h3{font-size:1.25rem;font-weight:800;display:flex;align-items:center;gap:.5rem}
+.vs-card.pat h3{color:var(--c4)} .vs-card.tel h3{color:var(--ar)}
 .vs-card .vs-ar{font-family:var(--arabic);font-weight:700;direction:rtl;text-align:right;margin:.2rem 0 .8rem}
 .vs-card ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
 .vs-card li{display:flex;align-items:center;gap:.55rem;font-size:.92rem;font-weight:600;background:var(--card);border:1px solid var(--border);border-radius:11px;padding:.5rem .7rem}
@@ -318,7 +321,7 @@ footer .ar{font-family:var(--arabic)}
       <a href="#s6">⚖️ Haklar</a>
       <a href="#quiz">✅ Test</a>
     </nav>
-    <button class="toggle" id="themeBtn" title="الوضع الليلي / Karanlık mod">🌙</button>
+    <button class="toggle" id="themeBtn" title="الوضع الليلي / Karanlık mod" aria-label="تبديل الوضع الليلي · Karanlık mod"><span aria-hidden="true">🌙</span></button>
   </div>
 </header>
 
@@ -327,7 +330,7 @@ footer .ar{font-family:var(--arabic)}
   <section class="hero">
     <span class="pill"><span class="dot"></span> 6 Ünite · ٦ وحدات · تفاعلي بالكامل</span>
     <h1>Sınava Hazırlık <span class="g">Rehberi</span></h1>
-    <div class="sub"><span class="tr-t">Türkçe ← Solda</span><span style="color:var(--muted)">•</span><span class="ar-t">العربية ← يمين →</span></div>
+    <div class="sub"><span class="tr-t">Türkçe — Sol</span><span style="color:var(--muted)">•</span><span class="ar-t" dir="rtl" lang="ar">العربية — يمين</span></div>
     <p class="lead">صفحة دراسية تفاعلية مصمّمة بعناية: <b>كل مصطلح تركي على اليسار يقابله شرحه العربي على اليمين تماماً</b>. ركّز على الكلمات <mark>المُظلّلة</mark> فهي مفتاح حل الامتحان، ثم اختبر نفسك في النهاية.</p>
     <div class="cta">
       <a href="#s1" class="btn primary">▶ ابدأ الدراسة · Başla</a>
@@ -346,7 +349,7 @@ footer .ar{font-family:var(--arabic)}
 <section id="s1" style="--accent:var(--c1)">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="sh-tr">🏰 Anadolu Tarihi</div>
+      <h2 class="sh-tr">🏰 Anadolu Tarihi</h2>
       <div class="sh-num">1</div>
       <div class="sh-ar">تاريخ الأناضول</div>
     </div>
@@ -362,7 +365,7 @@ footer .ar{font-family:var(--arabic)}
       <div class="tl-card">
         <div class="stage"></div>
         <div class="tl-emoji">🚪</div>
-        <h4>Pasinler Savaşı</h4>
+        <h3>Pasinler Savaşı</h3>
         <div class="yr">1048</div>
         <span class="tl-state">Kapı aralandı</span>
         <div class="tl-ar">انفتح الباب جزئياً (مواربة)</div>
@@ -370,7 +373,7 @@ footer .ar{font-family:var(--arabic)}
       <div class="tl-card">
         <div class="stage"></div>
         <div class="tl-emoji">🚪✨</div>
-        <h4>Malazgirt Savaşı</h4>
+        <h3>Malazgirt Savaşı</h3>
         <div class="yr">1071</div>
         <span class="tl-state">Tamamen açıldı</span>
         <div class="tl-ar">انفتح الباب بالكامل</div>
@@ -378,7 +381,7 @@ footer .ar{font-family:var(--arabic)}
       <div class="tl-card">
         <div class="stage"></div>
         <div class="tl-emoji">🏠</div>
-        <h4>Miryokefalon Savaşı</h4>
+        <h3>Miryokefalon Savaşı</h3>
         <div class="yr">1176</div>
         <span class="tl-state">Kesin Türk yurdu</span>
         <div class="tl-ar">وطن تركي نهائي</div>
@@ -419,7 +422,7 @@ footer .ar{font-family:var(--arabic)}
 <section id="s2" style="--accent:var(--c2)">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="sh-tr">💻 Dijital Platformlar</div>
+      <h2 class="sh-tr">💻 Dijital Platformlar</h2>
       <div class="sh-num">2</div>
       <div class="sh-ar">التطبيقات الرقمية والديمقراطية</div>
     </div>
@@ -433,25 +436,25 @@ footer .ar{font-family:var(--arabic)}
     <div class="apps reveal">
       <div class="app" style="--c2:#ef4444">
         <div class="ico" style="background:#ef4444">❤️</div>
-        <h4>e-Nabız</h4>
+        <h3>e-Nabız</h3>
         <p class="fn-tr">Laboratuvar sonuçları, reçeteler ve muayene bilgilerine ulaşmamızı sağlar.</p>
         <p class="fn-ar"><b>إي-نبض:</b> الوصول إلى نتائج المختبرات والوصفات الطبية والمعلومات الصحية.</p>
       </div>
       <div class="app" style="--c2:#2563eb">
         <div class="ico" style="background:#2563eb">🏛️</div>
-        <h4>e-Devlet</h4>
+        <h3>e-Devlet</h3>
         <p class="fn-tr">Devlet hizmetlerine (ikametgah, belge alma) hızlı ve güvenli ulaşım.</p>
         <p class="fn-ar"><b>الحكومة الإلكترونية:</b> الوصول السريع والآمن لخدمات الدولة (مثل وثيقة السكن).</p>
       </div>
       <div class="app" style="--c2:#16a34a">
         <div class="ico" style="background:#16a34a">🎓</div>
-        <h4>e-Okul</h4>
+        <h3>e-Okul</h3>
         <p class="fn-tr">Öğrencilerin not, devamsızlık ve sınav bilgilerini dijital ortamda sunar.</p>
         <p class="fn-ar"><b>إي-أوكُل:</b> يُظهر علامات الطلاب وأيام الغياب ومعلومات الامتحانات رقمياً.</p>
       </div>
       <div class="app" style="--c2:#d97706">
         <div class="ico" style="background:#d97706">📢</div>
-        <h4>CİMER</h4>
+        <h3>CİMER</h3>
         <p class="fn-tr">Vatandaşların dilek, şikayet ve önerilerini devlete iletmesini sağlar.</p>
         <p class="fn-ar"><b>جيمَر:</b> يتيح للمواطنين إرسال طلباتهم وشكاويهم واقتراحاتهم للدولة.</p>
       </div>
@@ -472,7 +475,7 @@ footer .ar{font-family:var(--arabic)}
 <section id="s3" style="--accent:var(--c3)">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="sh-tr">💰 Ekonomi & Yatırım</div>
+      <h2 class="sh-tr">💰 Ekonomi & Yatırım</h2>
       <div class="sh-num">3</div>
       <div class="sh-ar">الاقتصاد وخطوات الاستثمار</div>
     </div>
@@ -519,13 +522,13 @@ footer .ar{font-family:var(--arabic)}
       <p style="color:var(--muted);font-size:.9rem;margin-bottom:1rem">Soldan bir <b>kaynak</b>, sağdan ona uygun <b>faaliyeti</b> seç. · <span class="ar" style="direction:rtl">اختر مورداً من اليسار ثم النشاط المناسب من اليمين.</span></p>
       <div class="match-grid">
         <div class="match-col res">
-          <h5>Kaynak · المورد</h5>
+          <h4>Kaynak · المورد</h4>
           <button class="chip" data-key="su"><span class="emoji">💧</span> Su <span style="color:var(--muted);font-family:var(--arabic);margin-inline-start:auto">الماء</span></button>
           <button class="chip" data-key="orman"><span class="emoji">🌲</span> Orman <span style="color:var(--muted);font-family:var(--arabic);margin-inline-start:auto">الغابات</span></button>
           <button class="chip" data-key="maden"><span class="emoji">⛏️</span> Maden <span style="color:var(--muted);font-family:var(--arabic);margin-inline-start:auto">المعادن</span></button>
         </div>
         <div class="match-col act">
-          <h5>Faaliyet · النشاط</h5>
+          <h4>Faaliyet · النشاط</h4>
           <button class="chip" data-key="maden"><span class="emoji">🚗</span> Otomotiv & Elektronik <span style="color:var(--muted);margin-inline-start:auto">السيارات والإلكترونيات</span></button>
           <button class="chip" data-key="su"><span class="emoji">🎣</span> Balıkçılık & Rafting <span style="color:var(--muted);margin-inline-start:auto">الصيد والتجديف</span></button>
           <button class="chip" data-key="orman"><span class="emoji">🪵</span> Kerestecilik & Mobilya <span style="color:var(--muted);margin-inline-start:auto">الأخشاب والأثاث</span></button>
@@ -539,7 +542,7 @@ footer .ar{font-family:var(--arabic)}
 <section id="s4" style="--accent:var(--c4)">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="sh-tr">📜 Patent & Telif Hakkı</div>
+      <h2 class="sh-tr">📜 Patent & Telif Hakkı</h2>
       <div class="sh-num">4</div>
       <div class="sh-ar">براءة الاختراع وحقوق النشر</div>
     </div>
@@ -552,7 +555,7 @@ footer .ar{font-family:var(--arabic)}
 
     <div class="versus reveal">
       <div class="vs-card pat">
-        <h4>🛠️ Patent</h4>
+        <h3>🛠️ Patent</h3>
         <div class="vs-ar" style="color:var(--c4)">براءة الاختراع</div>
         <p style="font-size:.88rem;color:var(--muted);margin-bottom:.4rem">Mucidin haklarını korur · حماية حقوق المخترع</p>
         <ul>
@@ -564,7 +567,7 @@ footer .ar{font-family:var(--arabic)}
       </div>
       <div class="vs-mid"><span>⚖️</span></div>
       <div class="vs-card tel">
-        <h4>🎨 Telif Hakkı</h4>
+        <h3>🎨 Telif Hakkı</h3>
         <div class="vs-ar" style="color:var(--ar)">حقوق النشر</div>
         <p style="font-size:.88rem;color:var(--muted);margin-bottom:.4rem">Eser sahibinin haklarını korur · حماية حقوق المؤلف</p>
         <ul>
@@ -592,7 +595,7 @@ footer .ar{font-family:var(--arabic)}
 <section id="s5" style="--accent:var(--c5)">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="sh-tr">🛡️ Korsan & Siber Zorbalık</div>
+      <h2 class="sh-tr">🛡️ Korsan & Siber Zorbalık</h2>
       <div class="sh-num">5</div>
       <div class="sh-ar">الكتب المقرصنة والتنمر الإلكتروني</div>
     </div>
@@ -622,7 +625,7 @@ footer .ar{font-family:var(--arabic)}
 <section id="s6" style="--accent:var(--c6)">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="sh-tr">⚖️ Vatandaşlık Hakları</div>
+      <h2 class="sh-tr">⚖️ Vatandaşlık Hakları</h2>
       <div class="sh-num">6</div>
       <div class="sh-ar">حقوق المواطنة</div>
     </div>
@@ -664,7 +667,7 @@ footer .ar{font-family:var(--arabic)}
 <section id="quiz" style="--accent:var(--c4)">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="sh-tr">✅ Mini Test</div>
+      <h2 class="sh-tr">✅ Mini Test</h2>
       <div class="sh-num">?</div>
       <div class="sh-ar">اختبر نفسك</div>
     </div>
@@ -690,8 +693,8 @@ footer .ar{font-family:var(--arabic)}
 </section>
 
 <footer>
-  <p>📚 <b>Sosyal Bilgiler</b> · صُمِّمت بعناية للدراسة الثنائية اللغة</p>
-  <p class="ar">بُنيت بـ <span class="heart">♥</span> ليفهم طفلك ويتفوّق — Türkçe solda · العربية يميناً</p>
+  <p>📚 <b>Sosyal Bilgiler</b> · <span class="ar" dir="rtl" lang="ar">دليل الدراسة الثنائي اللغة</span></p>
+  <p class="ar" dir="rtl" lang="ar">صُنع بـ <span class="heart">♥</span> ليفهم طفلك ويتفوّق ويتقن مادته — التركية يساراً والعربية يميناً</p>
 </footer>
 
 <script>
@@ -780,7 +783,7 @@ document.querySelectorAll('section[id]').forEach(s=>secObserver.observe(s));
     const card=document.createElement('div');
     card.className='sort-item';
     card.innerHTML=`<div class="si-emoji">${it.emoji}</div>
-      <h5>${it.tr}</h5><div class="si-ar">${it.ar}</div>
+      <h4>${it.tr}</h4><div class="si-ar">${it.ar}</div>
       <div class="sort-btns">
         <button class="b-pat">Patent<br><span style="font-size:.72rem;font-family:var(--arabic)">براءة</span></button>
         <button class="b-tel">Telif<br><span style="font-size:.72rem;font-family:var(--arabic)">نشر</span></button>
